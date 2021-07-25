@@ -1,9 +1,11 @@
 name: "ericbook-distill"
-title: "Eric Book's personal website"
+title: "Eric Book"
+theme: assets/css/theme.css
 description: |
   Eric Book
 output_dir: "_site"
 navbar:
+  search: false
   right:
     - text: "Home"
       href: index.html

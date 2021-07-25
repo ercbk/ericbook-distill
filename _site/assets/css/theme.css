@@ -1,0 +1,135 @@
+
+/* base variables */
+
+/* Edit the CSS properties in this file to create a custom
+   Distill theme. Only edit values in the right column
+   for each row; values shown are the CSS defaults.
+   To return any property to the default,
+   you may set its value to: unset
+   All rows must end with a semi-colon.                      */
+
+/* Optional: embed custom fonts here with `@import`          */
+/* This must remain at the top of this file.                 */
+
+@import url("https://cdn.rawgit.com/tonsky/FiraCode/1.205/distr/fira_code.css");
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Neuton:wght@300&display=swap');
+
+
+
+
+html {
+  /*-- Main font sizes --*/
+  --title-size:      50px;
+  --body-size:       1.06rem;
+  --code-size:       14px;
+  --aside-size:      12px;
+  --fig-cap-size:    13px;
+  /*-- Main font colors --*/
+  --title-color:     #335f83; /* faux metallic blue (cyanish) */
+  --header-color:    #335f83;
+  --body-color:      #404d59; /* dark gray blue */
+  --aside-color:     #404d59;
+  --fig-cap-color:   #404d59;
+  /*-- Specify custom fonts ~~~ must be imported above   --*/
+  --heading-font:    'Neuton', serif;
+  --mono-font:       monospace;
+  --body-font:       'Lora', serif;
+  --navbar-font:     'Neuton', serif;  /* websites + blogs only */
+}
+
+/*-- ARTICLE METADATA --*/
+d-byline {
+  --heading-size:    0.8rem;
+  --heading-color:   rgba(0, 0, 0, 0.5);
+  --body-size:       1.0rem;
+  --body-color:      rgba(0, 0, 0, 0.8);
+}
+
+/*-- ARTICLE TABLE OF CONTENTS --*/
+.d-contents {
+  --heading-size:    18px;
+  --contents-size:   13px;
+}
+
+/*-- ARTICLE APPENDIX --*/
+d-appendix {
+  --heading-size:    15px;
+  --heading-color:   rgba(0, 0, 0, 0.65);
+  --text-size:       0.8em;
+  --text-color:      rgba(0, 0, 0, 0.5);
+}
+
+/*-- WEBSITE HEADER + FOOTER --*/
+/* These properties only apply to Distill sites and blogs  */
+
+.distill-site-header {
+  --title-size:       18px;
+  --text-color:       #404d59;
+  --text-size:        15px;
+  --hover-color:      white;
+  --bkgd-color:       white;
+}
+/* .distill-site-header {
+  --title-size:       18px;
+  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-size:        15px;
+  --hover-color:      white;
+  --bkgd-color:       #0F2E3D;
+} */
+
+.distill-site-footer {
+  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-size:        15px;
+  --hover-color:      white;
+  --bkgd-color:       #0F2E3D;
+}
+
+/*-- Additional custom styles --*/
+/* Add any additional CSS rules below                      */
+
+
+/* code highlighting */
+pre, code {
+  font-family: "Fira Code Retina", Consolas, Inconsolata, monospace;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: 2px;
+  line-height: 2rem; /* increases, so wrapping headers don't overlap */ 
+  font-weight: 300;
+}
+
+
+body {
+  font-size: 16px;
+}
+
+
+d-title {
+  padding-top: 13rem; /*so that navbar doesn't overlap fixed title */
+}
+
+
+/* --------------Navbar-------------*/
+
+
+/* background-image for fade-to-white color of navbar */
+.distill-site-header{ 
+  padding: 40px 0px;
+  /* background-image: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255,255,255,0.5)); */   
+  /* background-image: linear-gradient(to bottom, rgba(255, 255, 255, 1), #2b6075); */   
+  background-color: #fff;
+  font-size: 15px;
+  font-family: 'Source Sans Pro';
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+
+
+
+/*----------footer--------------*/
+
+
