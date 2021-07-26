@@ -40,9 +40,9 @@ html {
 
 /*-- ARTICLE METADATA --*/
 d-byline {
-  --heading-size:    0.8rem;
+  --heading-size:    1.0rem;
   --heading-color:   rgba(0, 0, 0, 0.5);
-  --body-size:       1.0rem;
+  --body-size:       20px;
   --body-color:      rgba(0, 0, 0, 0.8);
 }
 
@@ -122,7 +122,7 @@ d-title {
   /* background-image: linear-gradient(to bottom, rgba(255, 255, 255, 1), #2b6075); */   
   background-color: #fff;
   font-size: 15px;
-  font-family: 'Source Sans Pro';
+  font-family: 'Neuton', serif; 
   letter-spacing: 2px;
   text-transform: uppercase;
 }
@@ -131,5 +131,13 @@ d-title {
 
 
 /*----------footer--------------*/
+
+
+/*
+d-byline .byline {
+    grid-template-columns: 1fr 1fr;
+} 
+*/
+
 
 

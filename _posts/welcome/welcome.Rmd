@@ -4,11 +4,8 @@ description: |
   Welcome to our new blog, Eric Book. We hope you enjoy 
   reading what we have to say!
 author:
-  - name: Nora Jones 
-    url: https://example.com/norajones
-    affiliation: Spacely Sprockets
-    affiliation_url: https://example.com/spacelysprokets
-date: 07-24-2021
+  - name: Eric Book 
+date: 2021-07-24
 output:
   distill::distill_article:
     self_contained: false
@@ -45,5 +42,5 @@ mtcars %>%
   geom_boxplot()
 ```
 
-I'm am fucking starving. It looks like the cyl 4 has a median mpg of around 26 but the range is much wider than the other cylinder categories.
+I am fucking starving. It looks like the cyl 4 has a median mpg of around 26 but the range is much wider than the other cylinder categories.
 
