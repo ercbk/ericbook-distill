@@ -35,12 +35,10 @@ This is a chart.
 
 ```{r echo=TRUE}
 mtcars %>% 
-  tibble::rownames_to_column("brand") %>% 
-  mutate(cyl = factor(cyl),
-         cyl = fct_reorder(cyl, mpg)) %>% 
+  tibble::rownames_to_column("brand") %>% mutate(cyl = factor(cyl), cyl = fct_reorder(cyl, mpg)) %>% 
   ggplot(aes(x = mpg, y = cyl)) +
   geom_boxplot()
 ```
 
-I am fucking starving. It looks like the cyl 4 has a median mpg of around 26 but the range is much wider than the other cylinder categories.
+I am fucking starving. It looks like the cyl 4 has a median mpg of around 26 but the range is much wider than the other cylinder categories. Still plenty of variation between categories though.
 
