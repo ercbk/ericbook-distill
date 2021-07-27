@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
   <meta name="generator" content="distill" />
+  <link rel="alternate" type="application/rss+xml" href="https://ericbook.netlify.app/index.xml" />
 
   <style type="text/css">
   /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
@@ -86,26 +87,27 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>Eric Book</title>
+  <title>Eric Book: </title>
 
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Eric Book"/>
+  <meta property="og:title" content="Eric Book: "/>
   <meta property="og:type" content="article"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="Eric Book"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Eric Book"/>
+  <meta property="twitter:title" content="Eric Book: "/>
+  <meta property="twitter:site" content="@erc_bk"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","site","listing"]}},"value":[{"type":"character","attributes":{},"value":["Eric Book"]},{"type":"character","attributes":{},"value":["distill::distill_website"]},{"type":"character","attributes":{},"value":["posts"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","site","listing"]}},"value":[{"type":"character","attributes":{},"value":[""]},{"type":"character","attributes":{},"value":["distill::distill_website"]},{"type":"character","attributes":{},"value":["posts"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -1920,13 +1922,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     --hover-color:      #0064B6FF;
     --bkgd-color:       #fffaf0;
   }
-  /* .distill-site-header {
-    --title-size:       18px;
-    --text-color:       rgba(255, 255, 255, 0.8);
-    --text-size:        15px;
-    --hover-color:      #fffaf0;
-    --bkgd-color:       #0F2E3D;
-  } */
+
 
   .distill-site-footer {
     --text-color:       rgba(255, 255, 255, 0.8);
@@ -1939,7 +1935,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
 
-  /* -------------code highlighting------------*/
+  /* ------------ Code Highlighting -----------*/
 
 
   /* function color */
@@ -1949,9 +1945,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: #0064B6FF;
   }
 
-  /* #F9FCFFFF lightened header's blue for background 
-      prismatic::clr_lighten("#335f83", shift = 0.98)
-     left-side code box stroke
+  /* lightened header's blue for left-side code box stroke
       prismatic::clr_lighten("#335f83", shift = 0.85) */
   d-article div.sourceCode pre {
       border-left: 2px solid #D3E7FFFF;
@@ -1963,15 +1957,15 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
 
-  /* ------------scrollbars--------------*/
+  /* ----------- Scrollbars -------------*/
 
   /* page and code block scroll bars' color */
   /* also narrows and rounds bar */
     
-    ::-webkit-scrollbar {
-      width: 8px;
-      height: 8px;
-    }
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
 
   ::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
@@ -1988,7 +1982,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
 
-
+  /*------------- Body -------------*/
 
 
   h1, h2, h3, h4, h5, h6 {
@@ -2009,7 +2003,18 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   }
 
 
-  /* --------------Navbar-------------*/
+  /* need to increase padding so on Posts page, categories doesn't run into the navbar. Unfortunately it also misalignes toc and start of article 
+  d-article {
+    padding-top: 2.6rem;
+  }
+  */
+
+  d-byline {
+    padding-bottom: 1.0rem;
+    padding-top: 0.5rem;
+  }
+
+  /*------------- Navbar ------------*/
 
 
   /* background-image for fade-to-#fffaf0 color of navbar */
@@ -2025,7 +2030,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
 
-  /*----------footer--------------*/
+  /*---------- Footer --------------*/
 
 
   /*
@@ -2035,7 +2040,13 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   */
 
 
-  </style>
+  /*---------- sidebar -------------*/
+
+
+  /* Since I made the navbar wider, categories was getting overlapped. So, added some space */
+  body > d-article > div > div.posts-sidebar > div {
+    margin-top: 30px;
+  }</style>
   <style type="text/css">
   /* base style */
 
@@ -2211,7 +2222,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Eric Book","authors":[]}
+{"title":"","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2224,6 +2235,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <div class="nav-right">
 <a href="index.html">Home</a>
 <a href="about.html">About</a>
+<a href="https://github.com/ercbk">
+<i class="fab fa-github" aria-hidden="true"></i>
+</a>
+<a href="https://twitter.com/erc_bk">
+<i class="fab fa-twitter" aria-hidden="true"></i>
+</a>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
 </div>
 </nav>
@@ -2363,27 +2380,46 @@ function init_posts_list() {
 
 
 
-<div class="posts-container posts-apply-limit l-page">
+<div class="posts-container posts-with-sidebar posts-apply-limit l-screen-inset">
 <div class="posts-list">
-<h1 class="posts-list-caption" data-caption="Eric Book">Eric Book</h1>
+<h1 class="posts-list-caption" data-caption=""></h1>
 <a href="posts/welcome/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<script class="post-metadata" type="text/json">{"categories":["eda","R"]}</script>
 <div class="metadata">
 <div class="publishedDate">July 24, 2021</div>
-<div class="dt-authors">
-<div class="dt-author">Eric Book</div>
-</div>
 </div>
 <div class="thumbnail">
 <img src="posts/welcome/welcome_files/figure-html5/unnamed-chunk-2-1.png"/>
 </div>
 <div class="description">
 <h2>Welcome to Eric Book</h2>
-<div class="dt-tags"></div>
+<div class="dt-tags">
+<div class="dt-tag">eda</div>
+<div class="dt-tag">R</div>
+</div>
 <p>Welcome to our new blog, Eric Book. We hope you enjoy 
 reading what we have to say!</p>
 </div>
 </a>
+</div>
+<div class="posts-sidebar">
+<div class="sidebar-section categories">
+<h3>Categories</h3>
+<ul>
+<li>
+<a href="#category:Articles">Articles</a>
+<span class="category-count">(1)</span>
+</li>
+<li>
+<a href="#category:eda">eda</a>
+<span class="category-count">(1)</span>
+</li>
+<li>
+<a href="#category:R">R</a>
+<span class="category-count">(1)</span>
+</li>
+</ul>
+</div>
 </div>
 <div class="posts-more">
 <a href="#">More articles &raquo;</a>
@@ -2392,7 +2428,7 @@ reading what we have to say!</p>
 <!--/radix_placeholder_article_listing-->
 
 <div class="d-title">
-<h1>Eric Book</h1>
+<h1>index.utf8</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 

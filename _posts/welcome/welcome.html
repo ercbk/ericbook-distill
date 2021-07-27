@@ -100,23 +100,30 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <meta property="og:title" content="Welcome to Eric Book"/>
   <meta property="og:type" content="article"/>
   <meta property="og:description" content="Welcome to our new blog, Eric Book. We hope you enjoy &#10;reading what we have to say!"/>
+  <meta property="og:image" content="https://ericbook.netlify.app/welcome_files/figure-html5/unnamed-chunk-2-1.png"/>
+  <meta property="og:image:width" content="1248"/>
+  <meta property="og:image:height" content="768"/>
   <meta property="og:locale" content="en_US"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
-  <meta property="twitter:card" content="summary"/>
+  <meta property="twitter:card" content="summary_large_image"/>
   <meta property="twitter:title" content="Welcome to Eric Book"/>
   <meta property="twitter:description" content="Welcome to our new blog, Eric Book. We hope you enjoy &#10;reading what we have to say!"/>
+  <meta property="twitter:image" content="https://ericbook.netlify.app/welcome_files/figure-html5/unnamed-chunk-2-1.png"/>
+  <meta property="twitter:image:width" content="1248"/>
+  <meta property="twitter:image:height" content="768"/>
+  <meta property="twitter:creator" content="@erc_bk"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Welcome to Eric Book"]},{"type":"character","attributes":{},"value":["Welcome to our new blog, Eric Book. We hope you enjoy \nreading what we have to say!\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Eric Book"]}]}]},{"type":"character","attributes":{},"value":["2021-07-24"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","draft","base_url","twitter","categories","output"]}},"value":[{"type":"character","attributes":{},"value":["Welcome to Eric Book"]},{"type":"character","attributes":{},"value":["Welcome to our new blog, Eric Book. We hope you enjoy \nreading what we have to say!\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Eric Book"]}]}]},{"type":"character","attributes":{},"value":["2021-07-24"]},{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["https://ericbook.netlify.app"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["creator"]}},"value":[{"type":"character","attributes":{},"value":["@erc_bk"]}]},{"type":"character","attributes":{},"value":["eda","R"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["welcome_files/anchor-4.2.2/anchor.min.js","welcome_files/bowser-1.9.3/bowser.min.js","welcome_files/distill-2.2.21/template.v2.js","welcome_files/figure-html5/unnamed-chunk-2-1.png","welcome_files/header-attrs-2.6/header-attrs.js","welcome_files/jquery-1.11.3/jquery.min.js","welcome_files/popper-2.6.0/popper.min.js","welcome_files/tippy-6.2.7/tippy-bundle.umd.min.js","welcome_files/tippy-6.2.7/tippy-light-border.css","welcome_files/tippy-6.2.7/tippy.css","welcome_files/tippy-6.2.7/tippy.umd.min.js","welcome_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["welcome_files/anchor-4.2.2/anchor.min.js","welcome_files/bowser-1.9.3/bowser.min.js","welcome_files/distill-2.2.21/template.v2.js","welcome_files/figure-html5/unnamed-chunk-2-1.png","welcome_files/figure-html5/unnamed-chunk-3-1.png","welcome_files/header-attrs-2.6/header-attrs.js","welcome_files/jquery-1.11.3/jquery.min.js","welcome_files/popper-2.6.0/popper.min.js","welcome_files/tippy-6.2.7/tippy-bundle.umd.min.js","welcome_files/tippy-6.2.7/tippy-light-border.css","welcome_files/tippy-6.2.7/tippy.css","welcome_files/tippy-6.2.7/tippy.umd.min.js","welcome_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1467,6 +1474,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <div class="d-title">
 <h1>Welcome to Eric Book</h1>
 <!--radix_placeholder_categories-->
+<div class="dt-tags">
+<div class="dt=tag">eda</div>
+<div class="dt=tag">R</div>
+</div>
 <!--/radix_placeholder_categories-->
 <p><p>Welcome to our new blog, Eric Book. We hope you enjoy reading what we have to say!</p></p>
 </div>
@@ -1478,6 +1489,16 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 
 <div class="d-article">
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#data">Data</a></li>
+<li><a href="#chart">Chart</a></li>
+</ul>
+</nav>
+</div>
+<p>Introductory words that summarizes what this profound post is going to explain to world.</p>
 <h2 id="data">Data</h2>
 <p>This is data.</p>
 <div class="layout-chunk" data-layout="l-body">

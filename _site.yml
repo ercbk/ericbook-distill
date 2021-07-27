@@ -3,7 +3,14 @@ title: "Eric Book"
 theme: assets/css/theme.css
 description: |
   Eric Book
+base_url: https://ericbook.netlify.app
+twitter:
+  site: "@erc_bk"
 output_dir: "_site"
+collections:
+  posts:
+    authors_metadata: false
+    share: twitter
 navbar:
   search: false
   right:
@@ -11,4 +18,8 @@ navbar:
       href: index.html
     - text: "About"
       href: about.html
+    - icon: fab fa-github
+      href: https://github.com/ercbk
+    - icon: fab fa-twitter
+      href: https://twitter.com/erc_bk
 output: distill::distill_article

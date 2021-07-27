@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" version="1.0">
+  <url>
+    <loc>https://ericbook.netlify.app/about.html</loc>
+    <lastmod>2021-07-24T22:32:12-04:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ericbook.netlify.app/</loc>
+    <lastmod>2021-07-26T20:51:44-04:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ericbook.netlify.app/posts/welcome/</loc>
+    <lastmod>2021-07-26T23:03:07-04:00</lastmod>
+  </url>
+</urlset>
