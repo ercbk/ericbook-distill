@@ -1919,7 +1919,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   .distill-site-header {
     --title-size:       25px;
-    --text-color:       #404d59;
+    --text-color:       #335f83;
     --text-size:        20px;
     --hover-color:      #0064B6FF;
     --bkgd-color:       #fffaf0;
@@ -2005,12 +2005,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   }
 
 
-  /* need to increase padding so on Posts page, categories doesn't run into the navbar. Unfortunately it also misalignes toc and start of article 
-  d-article {
-    padding-top: 2.6rem;
-  }
-  */
-
   d-byline {
     padding-bottom: 1.0rem;
     padding-top: 0.5rem;
@@ -2024,11 +2018,24 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     padding: 40px 0px;
     /* background-image: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255,255,255,0.5)); */   
     /* background-image: linear-gradient(to bottom, rgba(255, 255, 255, 1), #2b6075); */   
-    font-family: 'Neuton', serif; 
+    /* background-image: linear-gradient(to bottom, #fcfcfc, #fcfcfc, #fcfcfc, #fcfcfced, #fcfcfcba, #fcfcfc33) !important; */
+    font-family: 'Neuton', serif;
+    font-weight: bold;
     letter-spacing: 2px;
     text-transform: uppercase;
   }
 
+
+  /* remove title - logo suffices*/
+  .distill-site-header .title {
+    display: none;
+  }
+
+  .distill-site-header .logo img {
+     max-height: 60px;
+     width: auto;
+     /*margin-top: 18px;*/
+  }
 
 
 
@@ -2048,6 +2055,15 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   /* Since I made the navbar wider, categories was getting overlapped. So, added some space */
   body > d-article > div > div.posts-sidebar > div {
     margin-top: 30px;
+  }
+
+
+  /*---------- Posts ------------*/
+
+
+  /* Made title of the article on the Posts page the same color as the title on the article page */
+  body > d-article > div > div.posts-list > a > div.description > h2 {
+    color: #335f83;
   }</style>
   <style type="text/css">
   /* base style */
@@ -2214,6 +2230,34 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
   <script src="site_libs/distill-2.2.21/template.v2.js"></script>
   <!--radix_placeholder_site_in_header-->
+  <script>
+     document.addEventListener("DOMContentLoaded", function () {
+       if (!/posts/.test(location.pathname)) {
+         return;
+       }
+
+       var script = document.createElement("script");
+       script.src = "https://utteranc.es/client.js";
+       script.setAttribute("repo", "sciencificity/Blog_Vebash");
+       script.setAttribute("issue-term", "title");
+       script.setAttribute("crossorigin", "anonymous");
+       script.setAttribute("label", "comments ðŸ’¬");
+       script.setAttribute("theme", "github-light");
+
+       /* wait for article to load, append script to article element */
+       var observer = new MutationObserver(function (mutations, observer) {
+         var article = document.querySelector("d-article");
+         if (article) {
+           observer.disconnect();
+           /* HACK: article scroll */
+           article.setAttribute("style", "overflow-y: hidden");
+           article.appendChild(script);
+         }
+       });
+
+       observer.observe(document.body, { childList: true });
+     });
+   </script>
   <!--/radix_placeholder_site_in_header-->
 
 
@@ -2232,6 +2276,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <header class="header header--fixed" role="banner">
 <nav class="distill-site-nav distill-site-header">
 <div class="nav-left">
+<a class="logo" href="index.html">
+<img src="images/name-block-blue-montserrat.png" alt="Logo"/>
+</a>
 <a href="index.html" class="title">Eric Book</a>
 </div>
 <div class="nav-right">

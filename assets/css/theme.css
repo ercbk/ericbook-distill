@@ -65,7 +65,7 @@ d-appendix {
 
 .distill-site-header {
   --title-size:       25px;
-  --text-color:       #404d59;
+  --text-color:       #335f83;
   --text-size:        20px;
   --hover-color:      #0064B6FF;
   --bkgd-color:       #fffaf0;
@@ -151,12 +151,6 @@ d-title {
 }
 
 
-/* need to increase padding so on Posts page, categories doesn't run into the navbar. Unfortunately it also misalignes toc and start of article 
-d-article {
-  padding-top: 2.6rem;
-}
-*/
-
 d-byline {
   padding-bottom: 1.0rem;
   padding-top: 0.5rem;
@@ -170,11 +164,24 @@ d-byline {
   padding: 40px 0px;
   /* background-image: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255,255,255,0.5)); */   
   /* background-image: linear-gradient(to bottom, rgba(255, 255, 255, 1), #2b6075); */   
-  font-family: 'Neuton', serif; 
+  /* background-image: linear-gradient(to bottom, #fcfcfc, #fcfcfc, #fcfcfc, #fcfcfced, #fcfcfcba, #fcfcfc33) !important; */
+  font-family: 'Neuton', serif;
+  font-weight: bold;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
 
+
+/* remove title - logo suffices*/
+.distill-site-header .title {
+  display: none;
+}
+
+.distill-site-header .logo img {
+   max-height: 60px;
+   width: auto;
+   /*margin-top: 18px;*/
+}
 
 
 
@@ -194,4 +201,13 @@ d-byline .byline {
 /* Since I made the navbar wider, categories was getting overlapped. So, added some space */
 body > d-article > div > div.posts-sidebar > div {
   margin-top: 30px;
+}
+
+
+/*---------- Posts ------------*/
+
+
+/* Made title of the article on the Posts page the same color as the title on the article page */
+body > d-article > div > div.posts-list > a > div.description > h2 {
+  color: #335f83;
 }

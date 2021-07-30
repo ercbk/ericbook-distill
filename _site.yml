@@ -13,6 +13,9 @@ collections:
     share: twitter
 navbar:
   search: false
+  logo:
+    image: images/name-block-blue-montserrat.png
+    href: index.html
   right:
     - text: "Home"
       href: index.html
@@ -22,4 +25,7 @@ navbar:
       href: https://github.com/ercbk
     - icon: fab fa-twitter
       href: https://twitter.com/erc_bk
-output: distill::distill_article
+output: 
+  distill::distill_article:
+    includes:
+        in_header: assets/html/utterances.html
