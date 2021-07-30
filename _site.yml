@@ -17,10 +17,12 @@ navbar:
     image: images/name-block-blue-montserrat.png
     href: index.html
   right:
-    - text: "Home"
-      href: index.html
     - text: "About"
       href: about.html
+    - text: "Blog"
+      href: index.html
+    - text: "Eric"
+      href: eric.html
     - icon: fab fa-github
       href: https://github.com/ercbk
     - icon: fab fa-twitter
