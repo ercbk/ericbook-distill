@@ -18,11 +18,9 @@ navbar:
     href: index.html
   right:
     - text: "About"
-      href: about.html
-    - text: "Blog"
       href: index.html
-    - text: "Eric"
-      href: eric.html
+    - text: "Blog"
+      href: blog.html
     - icon: fab fa-github
       href: https://github.com/ercbk
     - icon: fab fa-twitter
