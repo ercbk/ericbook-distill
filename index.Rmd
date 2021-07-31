@@ -12,6 +12,37 @@ site: distill::distill_website
 output: postcards::trestles
 ---
  
+<!-- All html and css copied from https://github.com/etiennebacher/personal_website_distill/blob/master/index.Rmd -->
+
+
+
+<!-- The postcard had a useless second scrollbar (in addition to the big one of distill). For some reason, I couldn't remove it with the CSS in custom.css. My only solution is to modify the source of the postcards::trestle template to remove this scrollbar. -->
+
+```{r, include = FALSE}
+trestles_orig <- readLines(
+  system.file("pandoc_templates/trestles.html",
+              package = "postcards")
+)
+trestles_mod <- trestles_orig
+trestles_mod[
+  which(
+    grepl(
+      'class="d-flex flex-column col px-5 align-items-center align-self-center mh-100" style="overflow-y: scroll;"',
+      trestles_mod
+    )
+  )
+] <- '<div class="d-flex flex-column col px-5 align-items-center align-self-center mh-100" style="overflow-y: none;">'
+
+cat(paste(trestles_mod, collapse = "\n"), file = system.file("pandoc_templates/trestles.html",
+              package = "postcards"))
+```
+
+
+
+
+
+
+
 ## Bio
 
 Currently, I'm contracting and consulting on data science projects.  
@@ -20,20 +51,68 @@ Previously, I served in the United States Air Force and earned degrees in Mathem
 
 I enjoy working on open source projects and learning new methods and tools.  
 
-Outside of data science, I enjoy science fiction, fantasy, and reading about politics and foreign policy. Also, I golf on occasion and watch most of the sportsball.
+Outside of data science, I enjoy science fiction, fantasy, and reading about politics and foreign policy. Also, I golf on occasion and watch most of the sportsball.  
 
-## Education
 
-**University of Louisville** | Louisville, KY
 
-B.S. in Physics (Astrophysics & Computational Physics), 2015  
+```{css, echo = FALSE}
+/* @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 
-**University of Louisville** | Louisville, KY
+body {
+  font-family: font-family: 'Lora', serif;
+}
+*/
 
-B.A. in Mathematics, 2015
+.columnname {
+  font-size: 1.4rem; 
+  font-weight: 300;
+}
+.grad-item {
+  list-style: none; 
+  background-image: url(images/graduation-cap-solid.png); 
+  background-repeat: no-repeat;  
+  background-size: 1.2rem; 
+  padding-left: 2rem;
+}
+.grad-location {
+  font-size: 0.8rem;
+  color: grey;
+}
+```
 
-## Current Focus
+\
+\
+\
+\
+\
 
-Forecasting  
-Bayesian Methods  
-Hybrid Statistical and Machine Learning Methods  
+
+:::: {style="display: grid; grid-template-columns: 40% 50%; grid-column-gap: 30px; line-height: 1.5rem;"}
+
+::: {}
+<span class = "columnname"> Current Focus </span>
+
+* Global Forecasting
+
+* Bayesian Methods
+
+* Quasi-Experimental Methods
+:::
+
+::: {}
+<span class = "columnname"> Education </span>
+
+<ul>
+ 
+<li class = "grad-item">   B.S. in Physics (Astrophysics & Computational Physics), 2015 <br> <p class = "grad-location"> Louisville, KY </p> </li>
+<br>
+<li class = "grad-item">   B.A. in Mathematics, 2015 <br>
+<p class = "grad-location"> Louisville, KY </p> </li>
+
+</ul>
+:::
+::::
+
+
+
+

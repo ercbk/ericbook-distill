@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
-    <style type="text/css">body {font-family: 'Roboto Slab', serif;}</style>
+    <style type="text/css">body {font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif, serif;}</style>
 
     <title></title>
 
@@ -917,27 +917,74 @@
           </div>
         </div>
         <div class="d-flex flex-column vh-100 border-left"></div>
-        <div class="d-flex flex-column col px-5 align-items-center align-self-center mh-100" style="overflow-y: scroll;">
+<div class="d-flex flex-column col px-5 align-items-center align-self-center mh-100" style="overflow-y: none;">
           <div class="my-5" id="content">
+            <!-- All html and css copied from https://github.com/etiennebacher/personal_website_distill/blob/master/index.Rmd -->
+            <!-- The postcard had a useless second scrollbar (in addition to the big one of distill). For some reason, I couldn't remove it with the CSS in custom.css. My only solution is to modify the source of the postcards::trestle template to remove this scrollbar. -->
             <div id="bio" class="section level2">
             <h2>Bio</h2>
             <p>Currently, I’m contracting and consulting on data science projects.</p>
             <p>Previously, I served in the United States Air Force and earned degrees in Mathematics and Physics (Astrophysics / Computational Physics) at the University of Louisville. At U of L, I was a research assistant in the Department of Physics and Astronomy and focused on numerical solutions to Hartree-Fock equations for molecular orbitals.</p>
             <p>I enjoy working on open source projects and learning new methods and tools.</p>
             <p>Outside of data science, I enjoy science fiction, fantasy, and reading about politics and foreign policy. Also, I golf on occasion and watch most of the sportsball.</p>
+            <style type="text/css">
+            /* @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
+            body {
+              font-family: font-family: 'Lora', serif;
+            }
+            */
+
+            .columnname {
+              font-size: 1.4rem; 
+              font-weight: 300;
+            }
+            .grad-item {
+              list-style: none; 
+              background-image: url(images/graduation-cap-solid.png); 
+              background-repeat: no-repeat;  
+              background-size: 1.2rem; 
+              padding-left: 2rem;
+            }
+            .grad-location {
+              font-size: 0.8rem;
+              color: grey;
+            }
+            </style>
+            <p><br />
+            <br />
+            <br />
+            <br />
+            <br />
+            </p>
+            <div style="display: grid; grid-template-columns: 40% 50%; grid-column-gap: 30px; line-height: 1.5rem;">
+            <div>
+            <p><span class="columnname"> Current Focus </span></p>
+            <ul>
+            <li><p>Global Forecasting</p></li>
+            <li><p>Bayesian Methods</p></li>
+            <li><p>Quasi-Experimental Methods</p></li>
+            </ul>
             </div>
-            <div id="education" class="section level2">
-            <h2>Education</h2>
-            <p><strong>University of Louisville</strong> | Louisville, KY</p>
-            <p>B.S. in Physics (Astrophysics &amp; Computational Physics), 2015</p>
-            <p><strong>University of Louisville</strong> | Louisville, KY</p>
-            <p>B.A. in Mathematics, 2015</p>
+            <div>
+            <p><span class="columnname"> Education </span></p>
+            <ul>
+            <li class="grad-item">
+            B.S. in Physics (Astrophysics &amp; Computational Physics), 2015 <br>
+            <p class="grad-location">
+            Louisville, KY
+            </p>
+            </li>
+            <br>
+            <li class="grad-item">
+            B.A. in Mathematics, 2015 <br>
+            <p class="grad-location">
+            Louisville, KY
+            </p>
+            </li>
+            </ul>
             </div>
-            <div id="current-focus" class="section level2">
-            <h2>Current Focus</h2>
-            <p>Forecasting<br />
-            Bayesian Methods<br />
-            Hybrid Statistical and Machine Learning Methods</p>
+            </div>
             </div>
           </div>
         </div>
@@ -978,25 +1025,72 @@
               </div>
             </div>
             <div class="p pt-4 px-5">
+              <!-- All html and css copied from https://github.com/etiennebacher/personal_website_distill/blob/master/index.Rmd -->
+              <!-- The postcard had a useless second scrollbar (in addition to the big one of distill). For some reason, I couldn't remove it with the CSS in custom.css. My only solution is to modify the source of the postcards::trestle template to remove this scrollbar. -->
               <div id="bio" class="section level2">
               <h2>Bio</h2>
               <p>Currently, I’m contracting and consulting on data science projects.</p>
               <p>Previously, I served in the United States Air Force and earned degrees in Mathematics and Physics (Astrophysics / Computational Physics) at the University of Louisville. At U of L, I was a research assistant in the Department of Physics and Astronomy and focused on numerical solutions to Hartree-Fock equations for molecular orbitals.</p>
               <p>I enjoy working on open source projects and learning new methods and tools.</p>
               <p>Outside of data science, I enjoy science fiction, fantasy, and reading about politics and foreign policy. Also, I golf on occasion and watch most of the sportsball.</p>
+              <style type="text/css">
+              /* @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
+              body {
+                font-family: font-family: 'Lora', serif;
+              }
+              */
+
+              .columnname {
+                font-size: 1.4rem; 
+                font-weight: 300;
+              }
+              .grad-item {
+                list-style: none; 
+                background-image: url(images/graduation-cap-solid.png); 
+                background-repeat: no-repeat;  
+                background-size: 1.2rem; 
+                padding-left: 2rem;
+              }
+              .grad-location {
+                font-size: 0.8rem;
+                color: grey;
+              }
+              </style>
+              <p><br />
+              <br />
+              <br />
+              <br />
+              <br />
+              </p>
+              <div style="display: grid; grid-template-columns: 40% 50%; grid-column-gap: 30px; line-height: 1.5rem;">
+              <div>
+              <p><span class="columnname"> Current Focus </span></p>
+              <ul>
+              <li><p>Global Forecasting</p></li>
+              <li><p>Bayesian Methods</p></li>
+              <li><p>Quasi-Experimental Methods</p></li>
+              </ul>
               </div>
-              <div id="education" class="section level2">
-              <h2>Education</h2>
-              <p><strong>University of Louisville</strong> | Louisville, KY</p>
-              <p>B.S. in Physics (Astrophysics &amp; Computational Physics), 2015</p>
-              <p><strong>University of Louisville</strong> | Louisville, KY</p>
-              <p>B.A. in Mathematics, 2015</p>
+              <div>
+              <p><span class="columnname"> Education </span></p>
+              <ul>
+              <li class="grad-item">
+              B.S. in Physics (Astrophysics &amp; Computational Physics), 2015 <br>
+              <p class="grad-location">
+              Louisville, KY
+              </p>
+              </li>
+              <br>
+              <li class="grad-item">
+              B.A. in Mathematics, 2015 <br>
+              <p class="grad-location">
+              Louisville, KY
+              </p>
+              </li>
+              </ul>
               </div>
-              <div id="current-focus" class="section level2">
-              <h2>Current Focus</h2>
-              <p>Forecasting<br />
-              Bayesian Methods<br />
-              Hybrid Statistical and Machine Learning Methods</p>
+              </div>
               </div>
             </div>
         </div>
