@@ -21,6 +21,8 @@ navbar:
       href: index.html
     - text: "Blog"
       href: blog.html
+    - text: "Gallery"
+      href: gallery.html
     - icon: fab fa-github
       href: https://github.com/ercbk
     - icon: fab fa-twitter
