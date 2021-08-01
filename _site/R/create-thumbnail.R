@@ -4,7 +4,7 @@
 create_thumbnail <- function(image) {
   
   imFile <- magick::image_read(here::here(paste0("images/gallery/large/", image)))
-  imFile_resized <- magick::image_resize(imFile, "6%")
+  imFile_resized <- magick::image_resize(imFile, "10%")
   magick::image_write(imFile_resized, here::here(paste0("images/gallery/thumbnails/thumb-", image)))
   
 }
