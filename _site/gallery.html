@@ -2368,18 +2368,23 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <div class="layout-chunk" data-layout="l-body">
 <div class="row" id="lightgallery">
 <a href="images/gallery/large/excess-death-col.png" data-sub-html="&lt;h4&gt;  Code -  &lt;a href=&quot;https://repo.com&quot;&gt;link&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;  Article -  &lt;a href=&quot;https://article.com&quot;&gt;datascience post&lt;/a&gt;&lt;/p&gt;">
-<img src="images/gallery/thumbnails/thumb-excess-death-col.png"/>
+<img src="images/gallery/thumbnails/thumb-excess-death-col.png" class="img-fluid"/>
 </a>
 <a href="images/gallery/large/pos-policy-one-2021-06-20.png" data-sub-html="&lt;h4&gt;  Code -  &lt;a href=&quot;https://repo.com&quot;&gt;link&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;  Article -  &lt;a href=&quot;https://article.com&quot;&gt;datascience post&lt;/a&gt;&lt;/p&gt;">
-<img src="images/gallery/thumbnails/thumb-pos-policy-one-2021-06-20.png"/>
+<img src="images/gallery/thumbnails/thumb-pos-policy-one-2021-06-20.png" class="img-fluid"/>
 </a>
 </div>
 </div>
-<!-- hideBarsDelay: Delay for hiding gallery controls in ms. ---->
+<!-- hideBarsDelay: 1500, Delay for hiding gallery controls in ms. ---->
+<!-- speed: 400, chart transition speed in viewer in ms ---->
+<!-- actualSize: lgzoom - true, button to return chart to orig size ---->
+<!-- showZoomInOutIcons: false, literal ---->
 <script type="text/javascript">
     lightGallery(document.getElementById('lightgallery'), {
-      hideBarsDelay: 1500,
-      plugins: [lgThumbnail, lgShare, lgZoom]
+      plugins: [lgThumbnail, lgShare, lgZoom],
+      speed: 600,
+      showZoomInOutIcons: true,
+      actualSize: false
     }); 
 </script>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
