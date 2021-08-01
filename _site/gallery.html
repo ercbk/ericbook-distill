@@ -2347,30 +2347,27 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.1.8/plugins/zoom/lg-zoom.min.js" integrity="sha512-wPh5IuI7eIXXS7SXTd0Xou0c1abJIocKCfrbHUFwem9wnd/v0ALKl+S69DvLcUgOVDYqjmIl1HkCOJl9y0IDaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <div class="layout-chunk" data-layout="l-body">
 <style type="text/css">
-.column {
-  float: left;
-  width: 45%;
-  margin-left: 1rem;
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
+/* container not affected by my global font, so need to set it locally */
+.lg-container {
+    font-family: Lora, serif;
 }
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
+
 #lightgallery > a > img:hover {
    transform: scale(1.15, 1.15);
    transition: 0.4s ease-in-out;
    cursor: pointer;
 }
+
 </style>
 </div>
 <div class="layout-chunk" data-layout="l-body">
 <div class="row" id="lightgallery">
-<a href="images/gallery/large/excess-death-col.png" data-sub-html="&lt;h4&gt;  Code -  &lt;a href=&quot;https://repo.com&quot;&gt;link&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;  Article -  &lt;a href=&quot;https://article.com&quot;&gt;datascience post&lt;/a&gt;&lt;/p&gt;">
+<a href="images/gallery/large/excess-death-col.png" data-sub-html="&lt;p&gt;  Code -  &lt;a href=&quot;https://repo.com&quot;&gt;script&lt;/a&gt;&lt;/p&gt;&lt;p&gt;  Article -  &lt;a href=&quot;https://article.com&quot;&gt;title of article&lt;/a&gt;&lt;/p&gt;">
 <img src="images/gallery/thumbnails/thumb-excess-death-col.png" class="img-fluid"/>
 </a>
-<a href="images/gallery/large/pos-policy-one-2021-06-20.png" data-sub-html="&lt;h4&gt;  Code -  &lt;a href=&quot;https://repo.com&quot;&gt;link&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;  Article -  &lt;a href=&quot;https://article.com&quot;&gt;datascience post&lt;/a&gt;&lt;/p&gt;">
+<a href="images/gallery/large/pos-policy-one-2021-06-20.png" data-sub-html="&lt;p&gt;  Code -  &lt;a href=&quot;https://repo.com&quot;&gt;script&lt;/a&gt;&lt;/p&gt;&lt;p&gt;  Article -  &lt;a href=&quot;https://article.com&quot;&gt;title of article&lt;/a&gt;&lt;/p&gt;">
 <img src="images/gallery/thumbnails/thumb-pos-policy-one-2021-06-20.png" class="img-fluid"/>
 </a>
 </div>
@@ -2378,7 +2375,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!-- hideBarsDelay: 1500, Delay for hiding gallery controls in ms. ---->
 <!-- speed: 400, chart transition speed in viewer in ms ---->
 <!-- actualSize: lgzoom - true, button to return chart to orig size ---->
-<!-- showZoomInOutIcons: false, literal ---->
+<!-- showZoomInOutIcons: lgzoom - false, literal ---->
 <script type="text/javascript">
     lightGallery(document.getElementById('lightgallery'), {
       plugins: [lgThumbnail, lgShare, lgZoom],
