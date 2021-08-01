@@ -2329,13 +2329,22 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
+<!-- css sheets go into head ---->
 <head>
-<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.0/css/lightgallery.min.css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.1-beta.0/js/lightgallery.min.js"></script>
+<!--- main lightgallery ---->
+<p><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.1.8/css/lightgallery.min.css" integrity="sha512-DY7doCjzDiHKPjOIz7TBml+ZGeiORmxLdMEa8x7j+I0kuHD/vBogtvqhZCUbeCKJ8TR1slujyv9wxO4x0hbBMQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /></p>
 <!-- lightgallery plugins -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lg-thumbnail/1.2.1/lg-thumbnail.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lg-fullscreen/1.2.1/lg-fullscreen.min.js"></script>
+<p><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.1.8/css/lg-thumbnail.min.css" integrity="sha512-wHHBD+hSImJWcX192FT77uzFT4pVJDZ5sTiVYE3cArMtIix9lycXS0lvuLwRVyyFQO4pTj7MKxSuFKFMVzjK2w==" crossorigin="anonymous" referrerpolicy="no-referrer" /></p>
+<p><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.1.8/css/lg-share.min.css" integrity="sha512-dOqsuo1HGMv5ohBl/0OIUVzkwFLF8ZmjhpZp2VT2mpH5UuOJXwtBhxxtbrrEIpvTDWm7mESg0JsEl4zkUGv/gw==" crossorigin="anonymous" referrerpolicy="no-referrer" /></p>
+<p><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.1.8/css/lg-zoom.min.css" integrity="sha512-SGo05yQXwPFKXE+GtWCn7J4OZQBaQIakZSxQSqUyVWqO0TAv3gaF/Vox1FmG4IyXJWDwu/lXzXqPOnfX1va0+A==" crossorigin="anonymous" referrerpolicy="no-referrer" /></p>
 </head>
+<!---- js scripts go into body ---->
+<!--- main lightgallery ---->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.1.8/lightgallery.min.js" integrity="sha512-BQPHJVHCOVIdd6S0Vi8+7gaPHy0cZxXNEzqn1gQWeYEMQMQDolld6PGJtShlVcCHEOwve3XHBwKaarmRO/Dnjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- lightgallery plugins -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.1.8/plugins/thumbnail/lg-thumbnail.min.js" integrity="sha512-k8FNBu1DIf1nYGu45clIvqvk93ViLsqArYSULTd1PDXGwH6uniTxMa+h7Ag669l/g/FzSOG2foKygGYD/MkAMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.1.8/plugins/share/lg-share.min.js" integrity="sha512-dzIgaUGIQD5lMqBh2gls2ERU0ReZqyBIOmJNOLm1NjhDzotZcRjZ1oja993dSRv62/dakvNsvwtXNOreTkAJ5A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.1.8/plugins/zoom/lg-zoom.min.js" integrity="sha512-wPh5IuI7eIXXS7SXTd0Xou0c1abJIocKCfrbHUFwem9wnd/v0ALKl+S69DvLcUgOVDYqjmIl1HkCOJl9y0IDaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <div class="layout-chunk" data-layout="l-body">
 <style type="text/css">
 .column {
@@ -2358,14 +2367,19 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 <div class="layout-chunk" data-layout="l-body">
 <div class="row" id="lightgallery">
-<a href="C:/Users/tbats/Documents/R/Projects/ericbook-distill/images/gallery/large/2021-12-steam-games.png">
-<img src="images/gallery/thumbnails/thumb-2021-12-steam-games.png"/>
+<a href="images/gallery/large/excess-death-col.png" data-sub-html="&lt;h4&gt;  Code -  &lt;a href=&quot;https://repo.com&quot;&gt;link&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;  Article -  &lt;a href=&quot;https://article.com&quot;&gt;datascience post&lt;/a&gt;&lt;/p&gt;">
+<img src="images/gallery/thumbnails/thumb-excess-death-col.png"/>
+</a>
+<a href="images/gallery/large/pos-policy-one-2021-06-20.png" data-sub-html="&lt;h4&gt;  Code -  &lt;a href=&quot;https://repo.com&quot;&gt;link&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;  Article -  &lt;a href=&quot;https://article.com&quot;&gt;datascience post&lt;/a&gt;&lt;/p&gt;">
+<img src="images/gallery/thumbnails/thumb-pos-policy-one-2021-06-20.png"/>
 </a>
 </div>
 </div>
+<!-- hideBarsDelay: Delay for hiding gallery controls in ms. ---->
 <script type="text/javascript">
     lightGallery(document.getElementById('lightgallery'), {
-      hideBarsDelay: 1500
+      hideBarsDelay: 1500,
+      plugins: [lgThumbnail, lgShare, lgZoom]
     }); 
 </script>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>

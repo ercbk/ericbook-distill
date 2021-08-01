@@ -19,18 +19,35 @@ library(htmltools)
 
 ```
 
-
+<!-- css sheets go into head ---->
 <head>
 
-<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.0/css/lightgallery.min.css" /> 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.1-beta.0/js/lightgallery.min.js"></script>
+<!--- main lightgallery ---->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.1.8/css/lightgallery.min.css" integrity="sha512-DY7doCjzDiHKPjOIz7TBml+ZGeiORmxLdMEa8x7j+I0kuHD/vBogtvqhZCUbeCKJ8TR1slujyv9wxO4x0hbBMQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <!-- lightgallery plugins -->
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lg-thumbnail/1.2.1/lg-thumbnail.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lg-fullscreen/1.2.1/lg-fullscreen.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.1.8/css/lg-thumbnail.min.css" integrity="sha512-wHHBD+hSImJWcX192FT77uzFT4pVJDZ5sTiVYE3cArMtIix9lycXS0lvuLwRVyyFQO4pTj7MKxSuFKFMVzjK2w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.1.8/css/lg-share.min.css" integrity="sha512-dOqsuo1HGMv5ohBl/0OIUVzkwFLF8ZmjhpZp2VT2mpH5UuOJXwtBhxxtbrrEIpvTDWm7mESg0JsEl4zkUGv/gw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.1.8/css/lg-zoom.min.css" integrity="sha512-SGo05yQXwPFKXE+GtWCn7J4OZQBaQIakZSxQSqUyVWqO0TAv3gaF/Vox1FmG4IyXJWDwu/lXzXqPOnfX1va0+A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
+
+
+<!---- js scripts go into body ---->
+
+<!--- main lightgallery ---->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.1.8/lightgallery.min.js" integrity="sha512-BQPHJVHCOVIdd6S0Vi8+7gaPHy0cZxXNEzqn1gQWeYEMQMQDolld6PGJtShlVcCHEOwve3XHBwKaarmRO/Dnjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- lightgallery plugins -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.1.8/plugins/thumbnail/lg-thumbnail.min.js" integrity="sha512-k8FNBu1DIf1nYGu45clIvqvk93ViLsqArYSULTd1PDXGwH6uniTxMa+h7Ag669l/g/FzSOG2foKygGYD/MkAMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.1.8/plugins/share/lg-share.min.js" integrity="sha512-dzIgaUGIQD5lMqBh2gls2ERU0ReZqyBIOmJNOLm1NjhDzotZcRjZ1oja993dSRv62/dakvNsvwtXNOreTkAJ5A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.1.8/plugins/zoom/lg-zoom.min.js" integrity="sha512-wPh5IuI7eIXXS7SXTd0Xou0c1abJIocKCfrbHUFwem9wnd/v0ALKl+S69DvLcUgOVDYqjmIl1HkCOJl9y0IDaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 
 ```{css}
 .column {
@@ -54,20 +71,32 @@ library(htmltools)
 
 
 
-```{r}
-# Create layout
+```{r create_layout}
+
+# get image paths and create html scaffolding
+
 images <- tibble::tibble(
-  images_thumb = fs::dir_ls(here::here("images/gallery/thumbnails")),
-  images_full_size = fs::dir_ls(here::here("images/gallery/large"))
+  # gallery doesn't work with full paths, so need to do some chopping and adding back-on
+  images_thumb = basename(fs::dir_ls(here::here("images/gallery/thumbnails"))),
+  images_full_size = basename(fs::dir_ls(here::here("images/gallery/large")))
   )
+
+squirrel <- tagList(
+  h4('Code -',
+     a(href = "https://repo.com", 'link')),
+  p('Article -',
+    a(href = 'https://article.com', 'datascience post'))
+)
+
+boris <- stringr::str_remove_all(toString(squirrel), "\n")
 
 img_html <- tagList(purrr::map2(images$images_thumb, images$images_full_size, function(t, l) {
     tags$a(
-      href = l,
-      tags$img(src = t)
+      href = paste0("images/gallery/large/", l),
+      "data-sub-html" = boris,
+      tags$img(src = paste0("images/gallery/thumbnails/", t))
     )
 }))
-
 
 withTags(
   div(
@@ -80,8 +109,11 @@ withTags(
 ```
 
 
+<!-- hideBarsDelay: Delay for hiding gallery controls in ms. ---->
+
 <script type="text/javascript">
     lightGallery(document.getElementById('lightgallery'), {
-      hideBarsDelay: 1500
+      hideBarsDelay: 1500,
+      plugins: [lgThumbnail, lgShare, lgZoom]
     }); 
 </script>
