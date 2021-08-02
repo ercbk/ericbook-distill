@@ -84,7 +84,7 @@ lol <- list(images$images_full_size, sub_html_ls, images$images_thumb)
 # lightgallery html skeleton
 img_html <- tagList(purrr::pmap(lol, function(l, s, t) {
   tags$a(
-    href = paste0("images/gallery/large/", l),
+    "data-src" = paste0("images/gallery/large/", l),
     "data-sub-html" = s,
     tags$img(src = paste0("images/gallery/thumbnails/", t),
              class = "img-fluid")
