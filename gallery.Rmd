@@ -1,8 +1,7 @@
 ---
 title: "Gallery"
 description: |
-  A selection of the plots I made for #TidyTuesday. Find the whole list
-  [here](https://github.com/etiennebacher/tidytuesday).
+  Clicking on a thumbnail opens a viewer with viewing options and links to the code used to create the chart and the article or project that it's associated with.
 output:
   distill::distill_article
 base_url: https://ericbook.netlify.app/
