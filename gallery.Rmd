@@ -15,6 +15,7 @@ knitr::opts_chunk$set(
 )
 
 library(htmltools)
+sub_html_ls <- readr::read_rds("data/sub-html-ls.rds")
 
 ```
 
@@ -57,19 +58,6 @@ library(htmltools)
 }
 
 
-.column {
-  float: left;
-  width: 45%;
-  margin-left: 1rem;
-}
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-
 #lightgallery > a > img:hover {
    transform: scale(1.15, 1.15);
    transition: 0.4s ease-in-out;
@@ -90,22 +78,36 @@ images <- tibble::tibble(
   images_full_size = basename(fs::dir_ls(here::here("images/gallery/large")))
   )
 
-squirrel <- tagList(
-  p('Code -',
-    a(href = "https://repo.com", 'script')),
-  p('Article -',
-    a(href = 'https://article.com', 'title of article'))
-)
+# squirrel <- tagList(
+#   p('Code -',
+#     a(href = "https://repo.com", 'script')),
+#   p('Article -',
+#     a(href = 'https://article.com', 'title of article'))
+# )
+# 
+# boris <- stringr::str_remove_all(toString(squirrel), "\n")
+# 
+# img_html <- tagList(purrr::map2(images$images_thumb, images$images_full_size, function(t, l) {
+#     tags$a(
+#       href = paste0("images/gallery/large/", l),
+#       "data-sub-html" = boris,
+#       tags$img(src = paste0("images/gallery/thumbnails/", t),
+#                class = "img-fluid")
+#     )
+# }))
 
-boris <- stringr::str_remove_all(toString(squirrel), "\n")
 
-img_html <- tagList(purrr::map2(images$images_thumb, images$images_full_size, function(t, l) {
-    tags$a(
-      href = paste0("images/gallery/large/", l),
-      "data-sub-html" = boris,
-      tags$img(src = paste0("images/gallery/thumbnails/", t),
-               class = "img-fluid")
-    )
+
+
+lol <- list(images$images_full_size, sub_html_ls, images$images_thumb)
+
+img_html <- tagList(purrr::pmap(lol, function(l, s, t) {
+  tags$a(
+    href = paste0("images/gallery/large/", l),
+    "data-sub-html" = s,
+    tags$img(src = paste0("images/gallery/thumbnails/", t),
+             class = "img-fluid")
+  )
 }))
 
 withTags(
