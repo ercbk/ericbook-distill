@@ -1,0 +1,35 @@
+---
+title: "Projects"
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(htmltools)
+source("R/create-proj-card.R")
+```
+
+
+```{r}
+
+create_proj_card(
+  img_src = "images/projects/ebtools.png",
+  url = "https://ercbk.github.io/ebtools/",
+  title = "{ebtools}",
+  text = "A personal R package of miscellaneous data science functions",
+  text2 = NULL
+)
+
+create_proj_card(
+  img_src = "images/projects/ind-covid-tracker.png",
+  url = "https://ercbk.github.io/Indiana-COVID-19-Website/",
+  title = "Indiana COVID-19 Tracker",
+  text = "This website tracks metrics that include disease spread, hospital resources, social distancing, and age demographics",
+  text2 = NULL
+)
+
+
+
+```
+
