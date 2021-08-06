@@ -29,6 +29,14 @@ create_proj_card(
   text2 = NULL
 )
 
+create_proj_card(
+  img_src = "images/projects/ind-covid-data-final.png",
+  url = "https://ercbk.github.io/indianacovid19data/",
+  title = "{indianacovid19data}",
+  text = "A R package for access to most of the processed and raw datasets from the Indiana COVID-19 Tracker project",
+  text2 = NULL
+)
+
 
 
 ```
