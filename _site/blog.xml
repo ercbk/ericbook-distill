@@ -6,6 +6,11 @@
     <atom:link href="https://ericbook.netlify.app/blog.xml" rel="self" type="application/rss+xml"/>
     <description>Eric Book
 </description>
+    <image>
+      <title>Eric Book</title>
+      <url>https://ericbook.netlify.app/images/eb-favicon32.png</url>
+      <link>https://ericbook.netlify.app</link>
+    </image>
     <generator>Distill</generator>
     <lastBuildDate>Sat, 24 Jul 2021 00:00:00 +0000</lastBuildDate>
     <item>
