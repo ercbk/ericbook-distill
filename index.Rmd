@@ -1,6 +1,6 @@
 ---
 title: ""
-image: "images/track.png"
+image: "images/portrait-round.png"
 links:
   - label: Twitter
     url: "https://twitter.com/erc_bk"
@@ -12,7 +12,7 @@ site: distill::distill_website
 output: postcards::trestles
 ---
  
-<!-- All html and css copied from https://github.com/etiennebacher/personal_website_distill/blob/master/index.Rmd -->
+<!-- All html and css (and comments) copied from https://github.com/etiennebacher/personal_website_distill/blob/master/index.Rmd -->
 
 
 
@@ -47,7 +47,7 @@ cat(paste(trestles_mod, collapse = "\n"), file = system.file("pandoc_templates/t
 
 Currently, I'm contracting and consulting on data science projects.  
 
-Previously, I served in the United States Air Force and earned degrees in Mathematics and Physics (Astrophysics / Computational Physics) at the University of Louisville. At U of L, I was a research assistant in the Department of Physics and Astronomy and focused on numerical solutions to Hartree-Fock equations for molecular orbitals.  
+Previously, I served in the United States Air Force and earned degrees in Mathematics and Physics (Astrophysics & Computational Physics) at the University of Louisville. At U of L, I was a research assistant in the Department of Physics and Astronomy and focused on numerical solutions to Hartree-Fock equations for molecular orbitals.  
 
 I enjoy working on open source projects and learning new methods and tools.  
 
