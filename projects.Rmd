@@ -14,14 +14,6 @@ source("R/create-proj-card.R")
 ```{r}
 
 create_proj_card(
-  img_src = "images/projects/ebtools.png",
-  url = "https://ercbk.github.io/ebtools/",
-  title = "{ebtools}",
-  text = "A personal R package of miscellaneous data science functions",
-  text2 = NULL
-)
-
-create_proj_card(
   img_src = "images/projects/ind-covid-tracker.png",
   url = "https://ercbk.github.io/Indiana-COVID-19-Website/",
   title = "Indiana COVID-19 Tracker",
@@ -34,6 +26,22 @@ create_proj_card(
   url = "https://ercbk.github.io/indianacovid19data/",
   title = "{indianacovid19data}",
   text = "A R package for access to most of the processed and raw datasets from the Indiana COVID-19 Tracker project",
+  text2 = NULL
+)  
+
+create_proj_card(
+  img_src = "images/projects/ebtools.png",
+  url = "https://ercbk.github.io/ebtools/",
+  title = "{ebtools}",
+  text = "A personal R package of miscellaneous data science functions",
+  text2 = NULL
+)
+
+create_proj_card(
+  img_src = "images/projects/reds-jaws.png",
+  url = "https://github.com/ercbk/reds-jaws",
+  title = "Reds JAWS",
+  text = "A Shiny dashboard for evaluating Reds Hall of Fame candidates.",
   text2 = NULL
 )
 
