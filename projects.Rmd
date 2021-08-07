@@ -34,7 +34,8 @@ create_proj_card(
   url = "https://ercbk.github.io/ebtools/",
   title = "{ebtools}",
   text = "A personal R package of miscellaneous data science functions",
-  text2 = NULL
+  text2 = NULL,
+  style = "width:295px; height:164px"
 )
 
 create_proj_card(
