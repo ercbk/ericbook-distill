@@ -35,7 +35,7 @@ create_proj_card(
   title = "{ebtools}",
   text = "A personal R package of miscellaneous data science functions",
   text2 = NULL,
-  style = "width:305px; height:174px"
+  style = "width:290px; height:159px"
 )
 
 create_proj_card(
