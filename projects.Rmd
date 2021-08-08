@@ -45,6 +45,22 @@ create_proj_card(
   text2 = NULL
 )
 
+create_proj_card(
+  img_src = "images/projects/health-equity.png",
+  url = "https://github.com/ercbk/health-equity-lmdc",
+  title = "Center for Health Equity",
+  text = "Data products for Louisville Center for Health Equity - Louisville Metro Department of Corrections data",
+  text2 = NULL
+)
+
+create_proj_card(
+  img_src = "images/projects/nested-cv.png",
+  url = "https://github.com/ercbk/nested-cross-validation-comparison",
+  title = "Nested Cross-Validation Comparison",
+  text = "Experimenting with various implementations and methods of nested cross-validation in R and Python",
+  text2 = NULL
+)
+
 
 
 ```
