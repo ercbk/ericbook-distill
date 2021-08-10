@@ -32,20 +32,20 @@ create_thumbnail(images[[7]], "6%")
 
 # code and project urls for the gallery chart images
 info_tbl <- tibble(
-  code_url = c("https://repo.com",
+  code_url = c("https://github.com/ercbk/health-equity-lmdc/blob/main/tables/gt-tbl-mis-fel-15.R",
                "https://github.com/ercbk/Indiana-COVIDcast-Dashboard/blob/master/index.Rmd",
                "https://github.com/ercbk/Indiana-COVID-19-Tracker/blob/master/R/static-charts/pos-policy-line.R",
                "https://github.com/ercbk/Indiana-COVID-19-Tracker/blob/master/R/static-charts/excess-death-col.R",
                "https://github.com/ercbk/Indiana-COVID-19-Website/blob/gh-pages/hospitals.Rmd",
                "https://github.com/ercbk/Indiana-COVID-19-Website/blob/gh-pages/demographics.Rmd",
-               "https://repo.com"),
-  proj_url = c("https://article.com",
+               "https://github.com/ercbk/health-equity-lmdc/blob/main/R/jeff-lmdc-comp.R"),
+  proj_url = c("https://github.com/ercbk/health-equity-lmdc",
               "https://ercbk.github.io/Indiana-COVIDcast-Dashboard/#dashboard",
               "https://ercbk.github.io/Indiana-COVID-19-Website/static.html#Daily_Positive_Cases_vs_Cumulative_Cases_",
               "https://ercbk.github.io/Indiana-COVID-19-Website/static.html#Excess_Deaths",
               "https://ercbk.github.io/Indiana-COVID-19-Website/hospitals.html",
               "https://ercbk.github.io/Indiana-COVID-19-Website/demographics.html",
-              "https://article.com")
+              "https://github.com/ercbk/health-equity-lmdc")
 )
 
 
