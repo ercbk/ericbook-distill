@@ -228,7 +228,15 @@ body > d-article > div > div.posts-list > a > div.description > h2 {
     background-color: #335f83;
 }
 
+@media (min-width: 850px) {
+  .d-lg-block {
+    display: block!important;
+  }
+}
 
+ 
+ 
+ 
 /*--------- Projects ----------*/
 
 /*
