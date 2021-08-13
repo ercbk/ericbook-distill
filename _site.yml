@@ -5,6 +5,7 @@ description: |
   Eric Book
 base_url: https://ericbook.netlify.app
 favicon: images/eb-favicon32.png
+google_analytics: "G-LQL656SLXC"
 twitter:
   site: "@erc_bk"
 output_dir: "_site"
