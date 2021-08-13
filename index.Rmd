@@ -13,11 +13,11 @@ meta() %>%
     title = "Eric Book",
     description = "Engineering, Modeling, Visualizing, and Communicating data",
     url = "https://ericbook.netlify.app",
-    image = "https://ericbook.netlify.app/images/twittercard-400-400.png",
+    image = "https://ericbook.netlify.app/images/twittercard-120-120.png",
     image_alt = "blue-cyan-gold triangle geometric with disintegrating effect, made with gimp ",
     og_type = "website",
     og_author = c("Eric Book"),
-    twitter_card_type = "summary_large_image",
+    twitter_card_type = "summary",
     twitter_creator = "@erc_bk"
   )
 ```
