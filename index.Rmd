@@ -17,7 +17,7 @@ meta() %>%
     image_alt = "blue-cyan-gold triangle geometric with disintegrating effect, made with gimp ",
     og_type = "website",
     og_author = c("Eric Book"),
-    twitter_card_type = "summary",
+    twitter_card_type = "summary_large_image",
     twitter_creator = "@erc_bk"
   )
 ```
