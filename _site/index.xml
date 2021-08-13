@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <title>Eric Book</title>
+    <link>https://ericbook.netlify.app</link>
+    <atom:link href="https://ericbook.netlify.app/index.xml" rel="self" type="application/rss+xml"/>
+    <description>Eric Book
+</description>
+    <image>
+      <title>Eric Book</title>
+      <url>https://ericbook.netlify.app/images/eb-favicon32.png</url>
+      <link>https://ericbook.netlify.app</link>
+    </image>
+    <generator>Distill</generator>
+    <lastBuildDate>Sat, 24 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Welcome to Eric Book</title>
+      <dc:creator>Eric Book</dc:creator>
+      <link>https://ericbook.netlify.app/posts/welcome</link>
+      <description>Welcome to our new blog, Eric Book. We hope you enjoy 
+reading what we have to say!</description>
+      <category>eda</category>
+      <category>R</category>
+      <guid>https://ericbook.netlify.app/posts/welcome</guid>
+      <pubDate>Sat, 24 Jul 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://ericbook.netlify.app/posts/welcome/welcome_files/figure-html5/unnamed-chunk-2-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+  </channel>
+</rss>

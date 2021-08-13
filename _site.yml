@@ -18,14 +18,14 @@ navbar:
     image: images/name-block-blue-montserrat.png
     href: index.html
   right:
-    - text: "About"
-      href: index.html
     - text: "Blog"
-      href: blog.html
+      href: index.html
     - text: "Projects"
       href: projects.html
     - text: "Gallery"
       href: gallery.html
+    - text: "About"
+      href: about.html
     - icon: fab fa-github
       href: https://github.com/ercbk
     - icon: fab fa-twitter

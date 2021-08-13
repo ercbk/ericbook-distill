@@ -1,118 +1,25 @@
 ---
 title: ""
-image: "images/portrait-round.png"
-links:
-  - label: Twitter
-    url: "https://twitter.com/erc_bk"
-  - label: GitHub
-    url: "https://github.com/ercbk"
-  - label: Email
-    url: "mailto:ercbkax0@gmail.com"
 site: distill::distill_website
-output: postcards::trestles
+listing: posts
 ---
- 
-<!-- All html and css (and comments) copied from https://github.com/etiennebacher/personal_website_distill/blob/master/index.Rmd -->
 
+  
+```{r, message=FALSE, warning=FALSE, include=FALSE}
+library(metathis)
 
-
-<!-- The postcard had a useless second scrollbar (in addition to the big one of distill). For some reason, I couldn't remove it with the CSS in custom.css. My only solution is to modify the source of the postcards::trestle template to remove this scrollbar. -->
-
-```{r, include = FALSE}
-trestles_orig <- readLines(
-  system.file("pandoc_templates/trestles.html",
-              package = "postcards")
-)
-trestles_mod <- trestles_orig
-trestles_mod[
-  which(
-    grepl(
-      'class="d-flex flex-column col px-5 align-items-center align-self-center mh-100" style="overflow-y: scroll;"',
-      trestles_mod
-    )
+meta() %>%
+  meta_social(
+    title = "Eric Book",
+    description = "Engineering, Modeling, Visualizing, and Communicating data",
+    url = "https://ericbook.netlify.app",
+    image = "https://ericbook.netlify.app/images/twitter-card-mosaic-blue-cyan-gold.png",
+    image_alt = "blue-cyan-gold triangle geometric with disintegrating effect, made with gimp ",
+    og_type = "website",
+    og_author = c("Eric Book"),
+    twitter_card_type = "summary",
+    twitter_creator = "@erc_bk"
   )
-] <- '<div class="d-flex flex-column col px-5 align-items-center align-self-center mh-100" style="overflow-y: none;">'
-
-cat(paste(trestles_mod, collapse = "\n"), file = system.file("pandoc_templates/trestles.html",
-              package = "postcards"))
 ```
-
-
-
-
-
-
-
-## Bio
-
-Currently, I'm contracting and consulting on data science projects.  
-
-Previously, I served in the United States Air Force and earned degrees in Mathematics and Physics (Astrophysics & Computational Physics) at the University of Louisville. At U of L, I was a research assistant in the Department of Physics and Astronomy and focused on numerical solutions to Hartree-Fock equations for molecular orbitals.  
-
-I enjoy working on open source projects and learning new methods and tools.  
-
-Outside of data science, I enjoy science fiction, fantasy, and reading about politics and foreign policy. Also, I golf on occasion and watch most of the sportsball.  
-
-
-
-```{css, echo = FALSE}
-/* @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
-
-body {
-  font-family: font-family: 'Lora', serif;
-}
-*/
-
-.columnname {
-  font-size: 1.4rem; 
-  font-weight: 300;
-}
-.grad-item {
-  list-style: none; 
-  background-image: url(images/graduation-cap-solid.png); 
-  background-repeat: no-repeat;  
-  background-size: 1.2rem; 
-  padding-left: 2rem;
-}
-.grad-location {
-  font-size: 0.8rem;
-  color: grey;
-}
-```
-
-\
-\
-\
-\
-\
-
-
-:::: {style="display: grid; grid-template-columns: 40% 50%; grid-column-gap: 30px; line-height: 1.5rem;"}
-
-::: {}
-<span class = "columnname"> Current Focus </span>
-
-* Global Forecasting
-
-* Bayesian Methods
-
-* Quasi-Experimental Methods
-:::
-
-::: {}
-<span class = "columnname"> Education </span>
-
-<ul>
- 
-<li class = "grad-item">   B.S. in Physics (Astrophysics & Computational Physics), 2015 <br> <p class = "grad-location"> Louisville, KY </p> </li>
-<br>
-<li class = "grad-item">   B.A. in Mathematics, 2015 <br>
-<p class = "grad-location"> Louisville, KY </p> </li>
-
-</ul>
-:::
-::::
-
-
-
-
+  
+  
