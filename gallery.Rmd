@@ -50,19 +50,77 @@ sub_html_ls <- readr::read_rds("data/sub-html-ls.rds")
 
 
 ```{css}
-@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 
-/* container not affected by my global font, so need to set it locally */
-.lg-container {
-    font-family: Lora, serif;
+
+.lightGallery-captions {
+  h4 {
+    transform: translate3d(60px, 0, 0px);
+  }
+  p {
+    transform: translate3d(-60px, 0, 0px);
+  }
+  h4,
+  p {
+    opacity: 0;
+  }
+}
+.lg-current {
+  .lightGallery-captions {
+    h4,
+    p {
+      transform: translate3d(0, 0, 0px);
+    }
+    h4,
+    p {
+      opacity: 1;
+    }
+  }
+}
+.lg-slide-progress {
+  .lightGallery-captions {
+    h4 {
+      transform: translate3d(-60px, 0, 0px);
+    }
+    p {
+      transform: translate3d(60px, 0, 0px);
+    }
+    h4,
+    p {
+      opacity: 0;
+    }
+  }
 }
 
-/* medium-like animation for thumbnails */
-#lightgallery > a > img:hover {
-   transform: scale(1.15, 1.15);
-   transition: 0.4s ease-in-out;
-   cursor: pointer;
+.lightGallery-captions {
+  h4,
+  p {
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in;
+  }
 }
+.lg-current {
+  .lightGallery-captions {
+    h4,
+    p {
+      transition-delay: 500ms;
+    }
+  }
+  &.lg-slide-progress {
+    .lightGallery-captions {
+      h4,
+      p {
+        transition-delay: 0ms;
+      }
+    }
+  }
+}
+
+
+
+.gallery-item {
+  width: 200px;
+  padding: 5px;
+}
+
 
 ```
 
@@ -84,6 +142,7 @@ lol <- list(images$images_full_size, sub_html_ls, images$images_thumb)
 # lightgallery html skeleton
 img_html <- tagList(purrr::pmap(lol, function(l, s, t) {
   tags$a(
+    class = "gallery-item",
     "data-src" = paste0("images/gallery/large/", l),
     "data-sub-html" = s,
     tags$img(src = paste0("images/gallery/thumbnails/", t),
@@ -93,8 +152,8 @@ img_html <- tagList(purrr::pmap(lol, function(l, s, t) {
 
 withTags(
   div(
-    class = "row",
-    id = "lightgallery",
+    class = "gallery-container d-flex align-items-center justify-content-center",
+    id = "gallery-container",
     img_html
   )
 )
@@ -108,10 +167,15 @@ withTags(
 <!-- showZoomInOutIcons: lgzoom - false, literal ---->
 
 <script type="text/javascript">
-    lightGallery(document.getElementById('lightgallery'), {
-      plugins: [lgThumbnail, lgShare, lgZoom],
-      speed: 600,
-      showZoomInOutIcons: true,
-      actualSize: false
-    }); 
+    lightGallery(document.getElementById("gallery-container"), {
+      speed: 500,
+      // Append caption inside the slide item
+      // to apply some animation for the captions (Optional)
+      appendSubHtmlTo: ".lg-item",
+      // Delay slide transition to complete captions animations
+      // before navigating to different slides (Optional)
+      // You can find caption animation demo on the captions demo page
+      slideDelay: 400,
+      plugins: [lgZoom]
+    });
 </script>

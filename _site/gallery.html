@@ -2329,6 +2329,13 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
        observer.observe(document.body, { childList: true });
      });
    </script>
+  <script type="text/javascript" cookie-consent="tracking" async src="https://www.googletagmanager.com/gtag/js?id=G-LQL656SLXC"></script>
+  <script type="text/javascript" cookie-consent="tracking">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LQL656SLXC');
+  </script>
   <!--/radix_placeholder_site_in_header-->
 
 
@@ -2401,43 +2408,101 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.1.8/plugins/zoom/lg-zoom.min.js" integrity="sha512-wPh5IuI7eIXXS7SXTd0Xou0c1abJIocKCfrbHUFwem9wnd/v0ALKl+S69DvLcUgOVDYqjmIl1HkCOJl9y0IDaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <div class="layout-chunk" data-layout="l-body">
 <style type="text/css">
-@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 
-/* container not affected by my global font, so need to set it locally */
-.lg-container {
-    font-family: Lora, serif;
+
+.lightGallery-captions {
+  h4 {
+    transform: translate3d(60px, 0, 0px);
+  }
+  p {
+    transform: translate3d(-60px, 0, 0px);
+  }
+  h4,
+  p {
+    opacity: 0;
+  }
+}
+.lg-current {
+  .lightGallery-captions {
+    h4,
+    p {
+      transform: translate3d(0, 0, 0px);
+    }
+    h4,
+    p {
+      opacity: 1;
+    }
+  }
+}
+.lg-slide-progress {
+  .lightGallery-captions {
+    h4 {
+      transform: translate3d(-60px, 0, 0px);
+    }
+    p {
+      transform: translate3d(60px, 0, 0px);
+    }
+    h4,
+    p {
+      opacity: 0;
+    }
+  }
 }
 
-/* medium-like animation for thumbnails */
-#lightgallery > a > img:hover {
-   transform: scale(1.15, 1.15);
-   transition: 0.4s ease-in-out;
-   cursor: pointer;
+.lightGallery-captions {
+  h4,
+  p {
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in;
+  }
 }
+.lg-current {
+  .lightGallery-captions {
+    h4,
+    p {
+      transition-delay: 500ms;
+    }
+  }
+  &.lg-slide-progress {
+    .lightGallery-captions {
+      h4,
+      p {
+        transition-delay: 0ms;
+      }
+    }
+  }
+}
+
+
+
+.gallery-item {
+  width: 200px;
+  padding: 5px;
+}
+
 
 </style>
 </div>
 <div class="layout-chunk" data-layout="l-body">
-<div class="row" id="lightgallery">
-<a data-src="images/gallery/large/1-demog-pretrial-inmates.png" data-sub-html="&lt;p&gt;  Project:   &lt;a href=&quot;https://github.com/ercbk/health-equity-lmdc&quot;&gt;link&lt;/a&gt;&lt;/p&gt;&lt;p&gt;  Code:   &lt;a href=&quot;https://github.com/ercbk/health-equity-lmdc/blob/main/tables/gt-tbl-mis-fel-15.R&quot;&gt;script&lt;/a&gt;&lt;/p&gt;">
+<div class="gallery-container d-flex align-items-center justify-content-center" id="gallery-container">
+<a class="gallery-item" data-src="images/gallery/large/1-demog-pretrial-inmates.png" data-sub-html="&lt;h4&gt;  Project:   &lt;a href=&quot;https://github.com/ercbk/health-equity-lmdc&quot;&gt;link&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;  Code:   &lt;a href=&quot;https://github.com/ercbk/health-equity-lmdc/blob/main/tables/gt-tbl-mis-fel-15.R&quot;&gt;script&lt;/a&gt;&lt;/p&gt;">
 <img src="images/gallery/thumbnails/thumb-1-demog-pretrial-inmates.png" class="img-fluid"/>
 </a>
-<a data-src="images/gallery/large/2-covidcast-indiana.png" data-sub-html="&lt;p&gt;  Project:   &lt;a href=&quot;https://ercbk.github.io/Indiana-COVIDcast-Dashboard/#dashboard&quot;&gt;link&lt;/a&gt;&lt;/p&gt;&lt;p&gt;  Code:   &lt;a href=&quot;https://github.com/ercbk/Indiana-COVIDcast-Dashboard/blob/master/index.Rmd&quot;&gt;script&lt;/a&gt;&lt;/p&gt;">
+<a class="gallery-item" data-src="images/gallery/large/2-covidcast-indiana.png" data-sub-html="&lt;h4&gt;  Project:   &lt;a href=&quot;https://ercbk.github.io/Indiana-COVIDcast-Dashboard/#dashboard&quot;&gt;link&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;  Code:   &lt;a href=&quot;https://github.com/ercbk/Indiana-COVIDcast-Dashboard/blob/master/index.Rmd&quot;&gt;script&lt;/a&gt;&lt;/p&gt;">
 <img src="images/gallery/thumbnails/thumb-2-covidcast-indiana.png" class="img-fluid"/>
 </a>
-<a data-src="images/gallery/large/3-pos-policy-zero.png" data-sub-html="&lt;p&gt;  Project:   &lt;a href=&quot;https://ercbk.github.io/Indiana-COVID-19-Website/static.html#Daily_Positive_Cases_vs_Cumulative_Cases_&quot;&gt;link&lt;/a&gt;&lt;/p&gt;&lt;p&gt;  Code:   &lt;a href=&quot;https://github.com/ercbk/Indiana-COVID-19-Tracker/blob/master/R/static-charts/pos-policy-line.R&quot;&gt;script&lt;/a&gt;&lt;/p&gt;">
+<a class="gallery-item" data-src="images/gallery/large/3-pos-policy-zero.png" data-sub-html="&lt;h4&gt;  Project:   &lt;a href=&quot;https://ercbk.github.io/Indiana-COVID-19-Website/static.html#Daily_Positive_Cases_vs_Cumulative_Cases_&quot;&gt;link&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;  Code:   &lt;a href=&quot;https://github.com/ercbk/Indiana-COVID-19-Tracker/blob/master/R/static-charts/pos-policy-line.R&quot;&gt;script&lt;/a&gt;&lt;/p&gt;">
 <img src="images/gallery/thumbnails/thumb-3-pos-policy-zero.png" class="img-fluid"/>
 </a>
-<a data-src="images/gallery/large/4-excess-death-col.png" data-sub-html="&lt;p&gt;  Project:   &lt;a href=&quot;https://ercbk.github.io/Indiana-COVID-19-Website/static.html#Excess_Deaths&quot;&gt;link&lt;/a&gt;&lt;/p&gt;&lt;p&gt;  Code:   &lt;a href=&quot;https://github.com/ercbk/Indiana-COVID-19-Tracker/blob/master/R/static-charts/excess-death-col.R&quot;&gt;script&lt;/a&gt;&lt;/p&gt;">
+<a class="gallery-item" data-src="images/gallery/large/4-excess-death-col.png" data-sub-html="&lt;h4&gt;  Project:   &lt;a href=&quot;https://ercbk.github.io/Indiana-COVID-19-Website/static.html#Excess_Deaths&quot;&gt;link&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;  Code:   &lt;a href=&quot;https://github.com/ercbk/Indiana-COVID-19-Tracker/blob/master/R/static-charts/excess-death-col.R&quot;&gt;script&lt;/a&gt;&lt;/p&gt;">
 <img src="images/gallery/thumbnails/thumb-4-excess-death-col.png" class="img-fluid"/>
 </a>
-<a data-src="images/gallery/large/5-local-hospital-capacity.png" data-sub-html="&lt;p&gt;  Project:   &lt;a href=&quot;https://ercbk.github.io/Indiana-COVID-19-Website/hospitals.html&quot;&gt;link&lt;/a&gt;&lt;/p&gt;&lt;p&gt;  Code:   &lt;a href=&quot;https://github.com/ercbk/Indiana-COVID-19-Website/blob/gh-pages/hospitals.Rmd&quot;&gt;script&lt;/a&gt;&lt;/p&gt;">
+<a class="gallery-item" data-src="images/gallery/large/5-local-hospital-capacity.png" data-sub-html="&lt;h4&gt;  Project:   &lt;a href=&quot;https://ercbk.github.io/Indiana-COVID-19-Website/hospitals.html&quot;&gt;link&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;  Code:   &lt;a href=&quot;https://github.com/ercbk/Indiana-COVID-19-Website/blob/gh-pages/hospitals.Rmd&quot;&gt;script&lt;/a&gt;&lt;/p&gt;">
 <img src="images/gallery/thumbnails/thumb-5-local-hospital-capacity.png" class="img-fluid"/>
 </a>
-<a data-src="images/gallery/large/6-median-age-weekly.png" data-sub-html="&lt;p&gt;  Project:   &lt;a href=&quot;https://ercbk.github.io/Indiana-COVID-19-Website/demographics.html&quot;&gt;link&lt;/a&gt;&lt;/p&gt;&lt;p&gt;  Code:   &lt;a href=&quot;https://github.com/ercbk/Indiana-COVID-19-Website/blob/gh-pages/demographics.Rmd&quot;&gt;script&lt;/a&gt;&lt;/p&gt;">
+<a class="gallery-item" data-src="images/gallery/large/6-median-age-weekly.png" data-sub-html="&lt;h4&gt;  Project:   &lt;a href=&quot;https://ercbk.github.io/Indiana-COVID-19-Website/demographics.html&quot;&gt;link&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;  Code:   &lt;a href=&quot;https://github.com/ercbk/Indiana-COVID-19-Website/blob/gh-pages/demographics.Rmd&quot;&gt;script&lt;/a&gt;&lt;/p&gt;">
 <img src="images/gallery/thumbnails/thumb-6-median-age-weekly.png" class="img-fluid"/>
 </a>
-<a data-src="images/gallery/large/7-pyrplot-tab-lmdc-jeff-15.png" data-sub-html="&lt;p&gt;  Project:   &lt;a href=&quot;https://github.com/ercbk/health-equity-lmdc&quot;&gt;link&lt;/a&gt;&lt;/p&gt;&lt;p&gt;  Code:   &lt;a href=&quot;https://github.com/ercbk/health-equity-lmdc/blob/main/R/jeff-lmdc-comp.R&quot;&gt;script&lt;/a&gt;&lt;/p&gt;">
+<a class="gallery-item" data-src="images/gallery/large/7-pyrplot-tab-lmdc-jeff-15.png" data-sub-html="&lt;h4&gt;  Project:   &lt;a href=&quot;https://github.com/ercbk/health-equity-lmdc&quot;&gt;link&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;  Code:   &lt;a href=&quot;https://github.com/ercbk/health-equity-lmdc/blob/main/R/jeff-lmdc-comp.R&quot;&gt;script&lt;/a&gt;&lt;/p&gt;">
 <img src="images/gallery/thumbnails/thumb-7-pyrplot-tab-lmdc-jeff-15.png" class="img-fluid"/>
 </a>
 </div>
@@ -2447,12 +2512,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!-- actualSize: lgzoom - true, button to return chart to orig size ---->
 <!-- showZoomInOutIcons: lgzoom - false, literal ---->
 <script type="text/javascript">
-    lightGallery(document.getElementById('lightgallery'), {
-      plugins: [lgThumbnail, lgShare, lgZoom],
-      speed: 600,
-      showZoomInOutIcons: true,
-      actualSize: false
-    }); 
+    lightGallery(document.getElementById("gallery-container"), {
+      speed: 500,
+      // Append caption inside the slide item
+      // to apply some animation for the captions (Optional)
+      appendSubHtmlTo: ".lg-item",
+      // Delay slide transition to complete captions animations
+      // before navigating to different slides (Optional)
+      // You can find caption animation demo on the captions demo page
+      slideDelay: 400,
+      plugins: [lgZoom]
+    });
 </script>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->

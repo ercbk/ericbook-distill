@@ -1,7 +1,7 @@
 write_info_html <- function (code, ref) {
   
   info_html <- tagList(
-    p('Project: ',
+    h4('Project: ',
       a(href = ref, 'link')),
     p('Code: ',
       a(href = code, 'script'))
