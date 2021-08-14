@@ -3,7 +3,8 @@ title: "Gallery"
 description: |
   Clicking on a thumbnail opens a viewer with viewing options and links to the code used to create the chart and the article or project that it's associated with.
 output:
-  distill::distill_article
+  distill::distill_article:
+    css: "assets/css/gallery.css"
 base_url: https://ericbook.netlify.app/
 ---
 
@@ -48,81 +49,6 @@ sub_html_ls <- readr::read_rds("data/sub-html-ls.rds")
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.1.8/plugins/zoom/lg-zoom.min.js" integrity="sha512-wPh5IuI7eIXXS7SXTd0Xou0c1abJIocKCfrbHUFwem9wnd/v0ALKl+S69DvLcUgOVDYqjmIl1HkCOJl9y0IDaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-
-```{css}
-
-
-.lightGallery-captions {
-  h4 {
-    transform: translate3d(60px, 0, 0px);
-  }
-  p {
-    transform: translate3d(-60px, 0, 0px);
-  }
-  h4,
-  p {
-    opacity: 0;
-  }
-}
-.lg-current {
-  .lightGallery-captions {
-    h4,
-    p {
-      transform: translate3d(0, 0, 0px);
-    }
-    h4,
-    p {
-      opacity: 1;
-    }
-  }
-}
-.lg-slide-progress {
-  .lightGallery-captions {
-    h4 {
-      transform: translate3d(-60px, 0, 0px);
-    }
-    p {
-      transform: translate3d(60px, 0, 0px);
-    }
-    h4,
-    p {
-      opacity: 0;
-    }
-  }
-}
-
-.lightGallery-captions {
-  h4,
-  p {
-    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in;
-  }
-}
-.lg-current {
-  .lightGallery-captions {
-    h4,
-    p {
-      transition-delay: 500ms;
-    }
-  }
-  &.lg-slide-progress {
-    .lightGallery-captions {
-      h4,
-      p {
-        transition-delay: 0ms;
-      }
-    }
-  }
-}
-
-
-
-.gallery-item {
-  width: 200px;
-  padding: 5px;
-}
-
-
-```
 
 
 
