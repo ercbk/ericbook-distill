@@ -1,72 +1,73 @@
 
 
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 
-.lightGallery-captions {
-  h4 {
-    transform: translate3d(60px, 0, 0px);
-  }
-  p {
-    transform: translate3d(-60px, 0, 0px);
-  }
-  h4,
-  p {
-    opacity: 0;
-  }
+/* container not affected by my global font, so need to set it locally */
+.lg-sub-html {
+    font-family: Lora, serif;
 }
-.lg-current {
-  .lightGallery-captions {
-    h4,
-    p {
-      transform: translate3d(0, 0, 0px);
-    }
-    h4,
-    p {
-      opacity: 1;
-    }
-  }
-}
-.lg-slide-progress {
-  .lightGallery-captions {
-    h4 {
-      transform: translate3d(-60px, 0, 0px);
-    }
-    p {
-      transform: translate3d(60px, 0, 0px);
-    }
-    h4,
-    p {
-      opacity: 0;
-    }
-  }
+/* have to use different tags for caption animation so trying match weight of p tag */
+.lg-sub-html h5{
+    font-weight: 500;
 }
 
-.lightGallery-captions {
-  h4,
-  p {
-    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in;
-  }
-}
-.lg-current {
-  .lightGallery-captions {
-    h4,
-    p {
-      transition-delay: 500ms;
-    }
-  }
-  &.lg-slide-progress {
-    .lightGallery-captions {
-      h4,
-      p {
-        transition-delay: 0ms;
-      }
-    }
-  }
+/* medium-like animation for thumbnails */
+#gallery-container > a > img:hover {
+   transform: scale(1.15, 1.15);
+   transition: 0.4s ease-in-out;
+   cursor: pointer;
 }
 
 
 
-.gallery-item {
-  width: 200px;
-  padding: 5px;
+
+/* ---------------- caption animation ------------------- */
+
+
+.lightGallery-captions h5 {
+  transform: translate3d(60px, 0, 0px);
+}
+.lightGallery-captions p {
+  transform: translate3d(-60px, 0, 0px);
+}
+.lightGallery-captions p {
+  opacity: 0;
 }
 
+
+.lg-current .lightGallery-captions h5,
+.lg-current .lightGallery-captions p {
+  transform: translate3d(0, 0, 0px);
+}
+.lg-current .lightGallery-captions h5,
+.lg-current .lightGallery-captions p {
+  opacity: 1;
+}
+
+
+.lg-slide-progress .lightGallery-captions h5 {
+  transform: translate3d(-60px, 0, 0px);
+}
+.lg-slide-progress .lightGallery-captions p {
+  transform: translate3d(60px, 0, 0px);
+}
+.lg-slide-progress .lightGallery-captions h5,
+.lg-slide-progress .lightGallery-captions p {
+  opacity: 0;
+}
+
+
+.lightGallery-captions h5,
+.lightGallery-captions p {
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in;
+}
+
+
+.lg-current .lightGallery-captions h5,
+.lg-current .lightGallery-captions p {
+  transition-delay: 500ms;
+}
+.lg-current.lg-slide-progress .lightGallery-captions h5,
+.lg-current.lg-slide-progress .lightGallery-captions p {
+  transition-delay: 0ms;
+}

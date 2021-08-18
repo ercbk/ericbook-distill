@@ -3,7 +3,7 @@
 library(dplyr); library(htmltools)
 
 source("R/create-thumbnail.R")
-source("R/write-info-html.R")
+source("R/write-caption-subhtml.R")
 
 
 
@@ -49,7 +49,7 @@ info_tbl <- tibble(
 )
 
 
-sub_html_ls <- purrr::map2(info_tbl$code_url, info_tbl$proj_url, ~write_info_html(.x, .y))
+sub_html_ls <- purrr::map2(info_tbl$code_url, info_tbl$proj_url, ~write_caption_subhtml(.x, .y))
 
 readr::write_rds(sub_html_ls, "data/sub-html-ls.rds")
 

@@ -2,9 +2,9 @@
 title: "Gallery"
 description: |
   Clicking on a thumbnail opens a viewer with viewing options and links to the code used to create the chart and the article or project that it's associated with.
-output:
+output: 
   distill::distill_article:
-    css: "assets/css/gallery.css"
+    css: assets/css/gallery.css
 base_url: https://ericbook.netlify.app/
 ---
 
@@ -55,6 +55,7 @@ sub_html_ls <- readr::read_rds("data/sub-html-ls.rds")
 ```{r create_layout}
 
 # get image paths and create html scaffolding
+# if using caption animation, recommend scaling gallery images to height = 645px
 
 images <- tibble::tibble(
   # gallery doesn't work with full paths, so need to do some chopping and adding back-on
@@ -62,12 +63,15 @@ images <- tibble::tibble(
   images_full_size = basename(fs::dir_ls(here::here("images/gallery/large")))
   )
 
+img_dims <- c("429-645-686", "912-645-1459", "766-645-1225", "1148-645-1836", "652-645-1043", "1180-645-1888", "1064-645-1702")
 
-lol <- list(images$images_full_size, sub_html_ls, images$images_thumb)
+lol <- list(img_dims, images$images_full_size, sub_html_ls, images$images_thumb)
 
 # lightgallery html skeleton
-img_html <- tagList(purrr::pmap(lol, function(l, s, t) {
+img_html <- tagList(purrr::pmap(lol, function(dim, l, s, t) {
   tags$a(
+    "data-lg-size" = dim,
+    "data-sizes" = "(min-width: 40em) 80vw, 100vw",
     class = "gallery-item",
     "data-src" = paste0("images/gallery/large/", l),
     "data-sub-html" = s,
@@ -88,20 +92,30 @@ withTags(
 
 
 <!-- hideBarsDelay: 1500, Delay for hiding gallery controls in ms. ---->
-<!-- speed: 400, chart transition speed in viewer in ms ---->
-<!-- actualSize: lgzoom - true, button to return chart to orig size ---->
-<!-- showZoomInOutIcons: lgzoom - false, literal ---->
+<!-- speed: 500, chart transition speed in viewer in ms ---->
+<!-- actualSize: true, lgZoom button to return chart to orig size ---->
+<!-- showZoomInOutIcons: false, lgZoom ---->
 
 <script type="text/javascript">
-    lightGallery(document.getElementById("gallery-container"), {
-      speed: 500,
+    // adds color to viewer background for each chart
+    const colours = ['#304340', '#000', '#000', '#000', '#000', '#000', '#570101'];
+    const galleryEventsDemo = document.getElementById("gallery-container");
+    galleryEventsDemo.addEventListener('lgBeforeSlide', (event) => {
+      const { index } = event.detail;
+      document.querySelector('.lg-backdrop').style.backgroundColor =
+        colours[index];
+    });
+    lightGallery(galleryEventsDemo, {
       // Append caption inside the slide item
-      // to apply some animation for the captions (Optional)
+      // to apply some animation for the captions
       appendSubHtmlTo: ".lg-item",
       // Delay slide transition to complete captions animations
-      // before navigating to different slides (Optional)
-      // You can find caption animation demo on the captions demo page
+      // before navigating to different slides
       slideDelay: 400,
-      plugins: [lgZoom]
+      speed: 500,
+      showZoomInOutIcons: true,
+      enableZoomAfter: 1000,
+      scale: 0.5,
+      plugins: [lgThumbnail, lgShare, lgZoom]
     });
 </script>
