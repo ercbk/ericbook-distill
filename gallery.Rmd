@@ -99,13 +99,13 @@ withTags(
 <script type="text/javascript">
     // adds color to viewer background for each chart
     const colours = ['#304340', '#000', '#000', '#000', '#000', '#000', '#570101'];
-    const galleryEventsDemo = document.getElementById("gallery-container");
-    galleryEventsDemo.addEventListener('lgBeforeSlide', (event) => {
+    const galleryEventsBkgd = document.getElementById("gallery-container");
+    galleryEventsBkgd.addEventListener('lgBeforeSlide', (event) => {
       const { index } = event.detail;
       document.querySelector('.lg-backdrop').style.backgroundColor =
         colours[index];
     });
-    lightGallery(galleryEventsDemo, {
+    lightGallery(galleryEventsBkgd, {
       // Append caption inside the slide item
       // to apply some animation for the captions
       appendSubHtmlTo: ".lg-item",
