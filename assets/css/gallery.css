@@ -18,6 +18,11 @@
    cursor: pointer;
 }
 
+/* caption animation delays slide transition and this syncs the background color transion to the slide transition */
+.lg-backdrop {
+    transition: opacity 333ms ease-in 0s, background-color 0.3s ease-in 0.5s !important;
+}
+
 
 
 
