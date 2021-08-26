@@ -24,6 +24,15 @@
 }
 
 
+/* caption styling */
+.lightGallery-captions h5 {
+  letter-spacing: 1px;
+  line-height: 0rem;
+}
+.lightGallery-captions p {
+  line-height: 1em;
+}
+
 
 
 /* ---------------- caption animation ------------------- */
