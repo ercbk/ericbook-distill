@@ -24,7 +24,7 @@
 }
 
 
-/* caption styling */
+/* caption style; after setting this, img sizes/captions looked fine on laptop, phone, pc */
 .lightGallery-captions h5 {
   letter-spacing: 1px;
   line-height: 0rem;
