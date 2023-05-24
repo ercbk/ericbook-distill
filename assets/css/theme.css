@@ -183,11 +183,26 @@ d-byline {
    /*margin-top: 18px;*/
 }
 
-
+/* Notebooks dropdown menu */
+body > header > nav > div.nav-right > div > div {
+  background-color: #fffaf0;
+}
+body > header > nav > div.nav-right > div > div > a {
+  font-size: 15px;
+  text-align: center;
+}
+/* needed this one for unlinked text */
+.nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
+    text-align: center;
+}
+/* removed black shadow hover effect */
+body > header > nav > div.nav-right > div > div > a:hover {
+  background-color: transparent !important;
+}
 
 /*---------- Footer --------------*/
 
-
+background-color: #000!important;
 /*
 d-byline .byline {
     grid-template-columns: 1fr 1fr;
