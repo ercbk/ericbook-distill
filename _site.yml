@@ -21,6 +21,10 @@ navbar:
   right:
     - text: "Blog"
       href: index.html
+    - text: "Notebooks"
+      menu: 
+      - text: "Data Science"
+        href: https://ercbk.github.io/Data-Science-Notebook/
     - text: "Projects"
       href: projects.html
     - text: "Gallery"
