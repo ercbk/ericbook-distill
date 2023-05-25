@@ -1,0 +1,87 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
+/* container not affected by my global font, so need to set it locally */
+.lg-sub-html {
+    font-family: Lora, serif;
+}
+/* have to use different tags for caption animation so trying match weight of p tag */
+.lg-sub-html h5{
+    font-weight: 500;
+}
+
+/* medium-like animation for thumbnails */
+#gallery-container > a > img:hover {
+   transform: scale(1.15, 1.15);
+   transition: 0.4s ease-in-out;
+   cursor: pointer;
+}
+
+/* caption animation delays slide transition and this syncs the background color transion to the slide transition */
+.lg-backdrop {
+    transition: opacity 333ms ease-in 0s, background-color 0.3s ease-in 0.5s !important;
+}
+
+
+/* caption style; after setting this, img sizes/captions looked fine on laptop, phone, pc */
+.lightGallery-captions h5 {
+  letter-spacing: 1px;
+  line-height: 0rem;
+}
+.lightGallery-captions p {
+  line-height: 1em;
+}
+
+
+
+/* ---------------- caption animation ------------------- */
+
+
+.lightGallery-captions h5 {
+  transform: translate3d(60px, 0, 0px);
+}
+.lightGallery-captions p {
+  transform: translate3d(-60px, 0, 0px);
+}
+.lightGallery-captions p {
+  opacity: 0;
+}
+
+
+.lg-current .lightGallery-captions h5,
+.lg-current .lightGallery-captions p {
+  transform: translate3d(0, 0, 0px);
+}
+.lg-current .lightGallery-captions h5,
+.lg-current .lightGallery-captions p {
+  opacity: 1;
+}
+
+
+.lg-slide-progress .lightGallery-captions h5 {
+  transform: translate3d(-60px, 0, 0px);
+}
+.lg-slide-progress .lightGallery-captions p {
+  transform: translate3d(60px, 0, 0px);
+}
+.lg-slide-progress .lightGallery-captions h5,
+.lg-slide-progress .lightGallery-captions p {
+  opacity: 0;
+}
+
+
+.lightGallery-captions h5,
+.lightGallery-captions p {
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in;
+}
+
+
+.lg-current .lightGallery-captions h5,
+.lg-current .lightGallery-captions p {
+  transition-delay: 500ms;
+}
+.lg-current.lg-slide-progress .lightGallery-captions h5,
+.lg-current.lg-slide-progress .lightGallery-captions p {
+  transition-delay: 0ms;
+}
