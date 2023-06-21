@@ -26,6 +26,7 @@ navbar:
       - text: "Data Science"
         href: https://ercbk.github.io/Data-Science-Notebook/
       - text: "Domain Knowledge"
+        href: https://ercbk.github.io/Domain-Knowledge-Notebook/
       - text: "Statistical Rethinking"
         href: https://ercbk.github.io/Statistical-Rethinking-Notebook/
     - text: "Projects"
